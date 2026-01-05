@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf1mp2230twea"]
+
+[ext_resource type="PackedScene" uid="uid://dchdykk3mlns8" path="res://Scenes/killzone.tscn" id="1_d0xjw"]
+[ext_resource type="Script" uid="uid://bpjt1ibw8t604" path="res://Scripts/lollipop_launcher.gd" id="1_pgx3q"]
+[ext_resource type="Texture2D" uid="uid://ddfhjidib6pox" path="res://Assets/lollipop-1.png.png" id="2_bbl7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbl7c"]
+radius = 3.16228
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgx3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bbl7c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lollipop Launcher" type="Node2D"]
+script = ExtResource("1_pgx3q")
+
+[node name="Killzone" parent="." instance=ExtResource("1_d0xjw")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CircleShape2D_bbl7c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pgx3q")

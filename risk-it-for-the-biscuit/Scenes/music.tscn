@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8ufp7mijndrq"]
+
+[ext_resource type="AudioStream" uid="uid://pi8kglymsnys" path="res://Assets/RiskItForTheBiscuit.mp3" id="1_fbmny"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_fbmny")
+autoplay = true
